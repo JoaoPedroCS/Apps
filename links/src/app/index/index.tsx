@@ -16,7 +16,7 @@ export default function Index() {
                 </TouchableOpacity>
             </View>
             
-            <Category name="Massinha" icon="heart-broken" isSelected/>
+            <Category name="Massinha" icon="lightbulb" isSelected/>
             <Category name="Amora" icon="star" isSelected={false}/>
             <Category name="Princesa" icon="stars" isSelected={false}/>
         </View>
