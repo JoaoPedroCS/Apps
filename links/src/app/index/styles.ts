@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '@/styles/colors';
+import { LearnMoreLinks } from 'react-native/Libraries/NewAppScreen';
 
 export const styles = StyleSheet.create({
     container: {
@@ -23,4 +24,8 @@ export const styles = StyleSheet.create({
         height: 32,
         width: 38,
     },
+    links: {
+        borderTopWidth: 1,
+        borderTopColor: colors.gray[600],
+    }
 }); 
