@@ -4,6 +4,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { styles } from "./styles";
 import { colors } from "@/styles/colors";
 import { Category } from "@/components/category";
+import { categories } from "@/utils/categories";
 
 
 export default function Index() {
@@ -16,9 +17,16 @@ export default function Index() {
                 </TouchableOpacity>
             </View>
             
-            <Category name="Massinha" icon="lightbulb" isSelected/>
-            <Category name="Amora" icon="star" isSelected={false}/>
-            <Category name="Princesa" icon="stars" isSelected={false}/>
+            <Category
+                name={categories[0].name} 
+                icon={categories[0].icon} 
+                isSelected
+            />
+            <Category
+                name={categories[1].name} 
+                icon={categories[1].icon} 
+                isSelected
+            />
         </View>
     );
 }
