@@ -25,7 +25,7 @@ export default function Index() {
             <Category
                 name={categories[1].name} 
                 icon={categories[1].icon} 
-                isSelected={false}
+                isSelected
             />
         </View>
     );
