@@ -5,6 +5,7 @@ import { styles } from "./styles";
 import { colors } from "@/styles/colors";
 
 import { Categories } from "@/components/categories";
+import { Link } from "@/components/link";
 
 
 export default function Index() {
@@ -19,6 +20,7 @@ export default function Index() {
 
             <Categories/>
             
+            <Link name="Google" url="https://google.com" onDetails={() => console.log("Clicou")}/>
         </View>
     );
 }
