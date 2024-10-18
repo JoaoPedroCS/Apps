@@ -49,6 +49,7 @@ export default function Index() {
                         <Text style={styles.modalUrl}>
                             https://joaopedrocs.com
                         </Text>
+                        
                     </View>
                 </View>
             </Modal>
