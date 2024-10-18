@@ -6,6 +6,7 @@ import { colors } from "@/styles/colors";
 
 import { Categories } from "@/components/categories";
 import { Link } from "@/components/link";
+import { Option } from "@/components/option";
 
 
 export default function Index() {
@@ -43,13 +44,18 @@ export default function Index() {
                                 <MaterialIcons name="close" size={20} color={colors.gray[400]}/>
                             </TouchableOpacity>
                         </View>
+
                         <Text style={styles.modalLinkName}>
                             Joaopedrocs
                         </Text>
                         <Text style={styles.modalUrl}>
                             https://joaopedrocs.com
                         </Text>
-                        
+
+                        <View style={styles.modalFooter}>
+                            <Option name="Excluir" icon="delete" variant="secondary"/>
+                            <Option name="Abrir" icon="open-in-new" variant="primary"/>
+                        </View>
                     </View>
                 </View>
             </Modal>
