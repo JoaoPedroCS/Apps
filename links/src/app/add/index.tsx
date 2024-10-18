@@ -31,7 +31,7 @@ export default function Add() {
 
             <Text style={styles.label}>Selecione uma categoria</Text>
 
-            <Categories/>
+            <Categories onChange={setCategory} selected={category}/>
 
             <View style={styles.form}>
                 <Input placeholder='Nome' onChangeText={setName} autoCorrect={false}/>
