@@ -38,8 +38,10 @@ export default function Index() {
                 <View style={styles.modal}>
                     <View style={styles.modalContent}>
                         <View style={styles.modalHeader}>
-                            <Text style={styles.modalCategory}>Curso aaaaaaaaaaaa</Text>
-                            <MaterialIcons name="close" size={20} color={colors.gray[400]}/>
+                            <Text style={styles.modalCategory}>Portfolio</Text>
+                            <TouchableOpacity>
+                                <MaterialIcons name="close" size={20} color={colors.gray[400]}/>
+                            </TouchableOpacity>
                         </View>
                         <Text style={styles.modalLinkName}>
                             Joaopedrocs
