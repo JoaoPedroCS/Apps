@@ -24,7 +24,7 @@ export default function Index() {
             <FlatList
             data={["1", "2", "3", "4", "5"]}
             keyExtractor={(item) => item}
-            renderItem={({ item }) => (
+            renderItem={() => (
                 <Link
                     name="Joao Pedro"
                     url="https://joaopedrocs.com"
