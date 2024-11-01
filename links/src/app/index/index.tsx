@@ -53,7 +53,7 @@ export default function Index() {
                             JoaoPedroCS
                         </Text>
                         <Text style={styles.modalUrl}>
-                            https://joaopedrocs.com/
+                            https://joaopedrocs.com
                         </Text>
 
                         <View style={styles.modalFooter}>
