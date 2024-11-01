@@ -50,7 +50,7 @@ export default function Index() {
                         </View>
 
                         <Text style={styles.modalLinkName}>
-                            JoaoPedro
+                            JoaoPedroCS
                         </Text>
                         <Text style={styles.modalUrl}>
                             https://joaopedrocs.com
