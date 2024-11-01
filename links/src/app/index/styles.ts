@@ -74,5 +74,5 @@ export const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderTopColor: colors.gray[600],
         paddingVertical: 14,  
-    },
+    }
 }); 
