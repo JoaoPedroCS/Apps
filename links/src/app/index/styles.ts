@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 import { colors } from '@/styles/colors';
 import { LearnMoreLinks } from 'react-native/Libraries/NewAppScreen';
 
+
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
