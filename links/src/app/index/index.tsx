@@ -61,7 +61,7 @@ export default function Index() {
             showsVerticalScrollIndicator={false}
             />
 
-            <Modal transparent visible={false}>
+            <Modal transparent visible={showModal}>
                 <View style={styles.modal}>
                     <View style={styles.modalContent}>
                         <View style={styles.modalHeader}>
