@@ -27,7 +27,6 @@ export default function Index() {
         } catch (error) {
             Alert.alert("Erro", "Não foi possível listar os links")
         }
-        
     }
 
     useFocusEffect(
