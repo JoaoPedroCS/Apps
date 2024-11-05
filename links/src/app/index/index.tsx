@@ -15,6 +15,7 @@ import { Option } from "@/components/option";
 
 export default function Index() {
     const [showModal, setShowModal] = useState(false)
+    const [link, setLink] = useState<LinkStorage>({} as LinkStorage)
     const [links, setLinks] = useState<LinkStorage[]>([])
     const [category, setCategory] = useState(categories[0].name);
 
@@ -32,6 +33,7 @@ export default function Index() {
 
     function handleDetails(selected: LinkStorage) {
         setShowModal(true)
+        setLink(selected)
     }
 
     useFocusEffect(
@@ -69,17 +71,17 @@ export default function Index() {
                 <View style={styles.modal}>
                     <View style={styles.modalContent}>
                         <View style={styles.modalHeader}>
-                            <Text style={styles.modalCategory}>Portfolio</Text>
+                            <Text style={styles.modalCategory}>{link.category}</Text>
                             <TouchableOpacity onPress={() => setShowModal(false)}>
                                 <MaterialIcons name="close" size={20} color={colors.gray[400]}/>
                             </TouchableOpacity>
                         </View>
 
                         <Text style={styles.modalLinkName}>
-                            JoaoPedroCS
+                            {link.name}
                         </Text>
                         <Text style={styles.modalUrl}>
-                            https://joaopedrocs.com
+                            {link.url }
                         </Text>
 
                         <View style={styles.modalFooter}>
