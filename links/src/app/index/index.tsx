@@ -30,6 +30,10 @@ export default function Index() {
         }
     }
 
+    function handleDetails(selected: LinkStorage) {
+        setShowModal(true)
+    }
+
     useFocusEffect(
         useCallback(() => {
             getLinks()
@@ -54,14 +58,14 @@ export default function Index() {
                 <Link
                     name={item.name}
                     url={item.url}
-                    onDetails={() => setShowModal(true)}/>
+                    onDetails={() => handleDetails(item)}/>
             )}
             style={styles.links}
             contentContainerStyle={styles.linksContent}
             showsVerticalScrollIndicator={false}
             />
 
-            <Modal transparent visible={showModal}>
+            <Modal transparent visible={showModal} animationType="slide">
                 <View style={styles.modal}>
                     <View style={styles.modalContent}>
                         <View style={styles.modalHeader}>
