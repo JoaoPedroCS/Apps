@@ -36,6 +36,20 @@ export default function Index() {
         setLink(selected)
     }
 
+    async function handleRemove(){
+        try {
+            Alert.alert("Excluir", "Deseja realmente excluir?", [
+                {style: "cancel", text:"Não"},
+                { text: "Sim", onPress: async () => {
+                    await
+                }}
+            ])
+        } catch (error) {
+            Alert.alert("Erro", "Não foi possível excluir")
+            console.log("error")
+        }
+    }
+
     useFocusEffect(
         useCallback(() => {
             getLinks()
