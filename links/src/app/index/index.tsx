@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { Image, View, TouchableOpacity, FlatList, Modal, Text } from "react-native";
+import { useState, useEffect, useDebugValue } from "react";
+import { Image, View, TouchableOpacity, FlatList, Modal, Text, Alert, } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { router } from "expo-router";
 
 import { styles } from "./styles";
 import { colors } from "@/styles/colors";
 import { categories } from "@/utils/categories";
+import { linkStorage, LinkStorage } from "@/storage/link-storage";
 
 import { Categories } from "@/components/categories";
 import { Link } from "@/components/link";
@@ -13,7 +14,23 @@ import { Option } from "@/components/option";
 
 
 export default function Index() {
+    const [links, setLinks] = useState<LinkStorage[]>([])
     const [category, setCategory] = useState(categories[0].name);
+
+    async function getLinks() {
+        try {
+            const response = await linkStorage.get()
+            setLinks(response)
+        } catch (error) {
+            Alert.alert("Erro", "Não foi possível listar os links")
+        }
+        
+    }
+
+    useEffect(() => {
+        getLinks()
+    }, [category])
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -26,12 +43,12 @@ export default function Index() {
             <Categories onChange={setCategory} selected={category}/>
 
             <FlatList
-            data={["1", "2", "3", "4", "5"]}
-            keyExtractor={(item) => item}
-            renderItem={() => (
+            data={links}
+            keyExtractor={(item) => item.id}
+            renderItem={( {item} ) => (
                 <Link
-                    name="Joao Pedro"
-                    url="https://joaopedrocs.com"
+                    name={item.name}
+                    url={item.url}
                     onDetails={() => console.log("Clicou")}/>
             )}
             style={styles.links}
