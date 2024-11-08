@@ -57,6 +57,7 @@ export default function Index() {
     async function handleOpen(){
         try {
             await Linking.openURL(link.url)
+            setShowModal(false)
         } catch (error) {
             Alert.alert("Link", "Não foi possível abrir o link")
             console.log(error)
