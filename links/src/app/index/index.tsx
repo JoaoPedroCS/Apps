@@ -36,18 +36,22 @@ export default function Index() {
         setLink(selected)
     }
 
-    async function handleRemove(){
+    async function linkRemove(){
         try {
-            Alert.alert("Excluir", "Deseja realmente excluir?", [
-                {style: "cancel", text:"Não"},
-                { text: "Sim", onPress: async () => {
-                    await
-                }}
-            ])
+            await linkStorage.remove(link.id)
+            getLinks()
+            setShowModal(false)
         } catch (error) {
             Alert.alert("Erro", "Não foi possível excluir")
-            console.log("error")
+            console.log(error)
         }
+    }
+
+    function handleRemove(){
+        Alert.alert("Excluir", "Deseja realmente excluir?", [
+            {style: "cancel", text:"Não"},
+            { text: "Sim", onPress: linkRemove},
+        ])
     }
 
     useFocusEffect(
@@ -99,7 +103,7 @@ export default function Index() {
                         </Text>
 
                         <View style={styles.modalFooter}>
-                            <Option name="Excluir" icon="delete" variant="secondary"/>
+                            <Option name="Excluir" icon="delete" variant="secondary" onPress={handleRemove}/>
                             <Option name="Abrir" icon="open-in-new" variant="primary"/>
                         </View>
                     </View>
