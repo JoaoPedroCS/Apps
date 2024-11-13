@@ -43,7 +43,6 @@ export default function Index() {
             setShowModal(false)
         } catch (error) {
             Alert.alert("Erro", "Não foi possível excluir")
-            console.log(error)
         }
     }
 
@@ -60,7 +59,6 @@ export default function Index() {
             setShowModal(false)
         } catch (error) {
             Alert.alert("Link", "Não foi possível abrir o link")
-            console.log(error)
         }
     }
 
